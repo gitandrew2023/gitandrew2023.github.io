@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Order Request & Contact | North Star Bakery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <span>✨ Fresh Artisan Baking Daily | Pre-Orders & Inquiries Welcome</span>
+        </div>
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">
+                <img src="images/bakery-logo.png" alt="North Star Bakery Logo">
+                <div class="brand-text">
+                    <h1>NORTH STAR</h1>
+                    <p>Bakery & Confectionery</p>
+                </div>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products & Pricing</a></li>
+                    <li><a href="about.html">About & Philosophy</a></li>
+                    <li><a href="contact.html" class="active">Pre-Order & Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section style="text-align: center; margin-bottom: 40px;">
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--primary-color); margin-bottom: 10px;">Pre-Order & General Inquiries</h2>
+            <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto;">Reserve your favorite loaves or ask a question. Submit your request below, and our baking team will have your items ready for pickup.</p>
+        </section>
+
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start;">
+            <!-- Location & Info Sidebar -->
+            <div class="card">
+                <h3>📍 Bakehouse Location</h3>
+                <p style="margin-bottom: 15px; color: var(--text-muted);">124 Main Street<br>Bakery District, Cityville</p>
+
+                <h4 style="font-family: var(--font-heading); color: var(--primary-color); margin-top: 20px; margin-bottom: 8px;">Hours of Operation</h4>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 15px;">
+                    <strong>Monday – Saturday:</strong> 6:30 AM – 6:00 PM<br>
+                    <strong>Sunday:</strong> 7:00 AM – 3:00 PM
+                </p>
+
+                <h4 style="font-family: var(--font-heading); color: var(--primary-color); margin-top: 20px; margin-bottom: 8px;">Direct Contact</h4>
+                <p style="font-size: 0.95rem; color: var(--text-muted);">
+                    📞 Phone: (555) 234-BAKE<br>
+                    ✉️ Email: hello@northstarbakery.com
+                </p>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-card">
+                <div id="formFeedback" style="display: none;"></div>
+
+                <form id="preOrderForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" placeholder="Jane Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" placeholder="jane@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupDate">Requested Pickup Date *</label>
+                            <input type="date" id="pickupDate" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="requestType">Request Type *</label>
+                            <select id="requestType" class="form-control" required>
+                                <option value="pre-order">Bakery Pre-Order</option>
+                                <option value="catering">Event Catering Inquiry</option>
+                                <option value="general">General Question</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemDetails">Requested Items & Quantities *</label>
+                        <textarea id="itemDetails" class="form-control" placeholder="e.g., 2 Signature Country Loaves, 4 Butter Croissants..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="allergyNotes">Allergy Notes & Dietary Restrictions</label>
+                        <textarea id="allergyNotes" class="form-control" placeholder="Please list any nut, dairy, or gluten sensitivities..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>North Star Bakery</h4>
+                <p>Authentic neighborhood bakehouse dedicated to traditional craftsmanship, natural ingredients, and warm hospitality.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products & Pricing</a></li>
+                    <li><a href="about.html">Our Philosophy</a></li>
+                    <li><a href="contact.html">Pre-Order Form</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Bakehouse Hours</h4>
+                <p>Monday – Saturday: 6:30 AM – 6:00 PM<br>Sunday: 7:00 AM – 3:00 PM<br><em>Fresh loaves ready by 7:00 AM daily.</em></p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 North Star Bakery. All rights reserved. Grounded in community & craftsmanship.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

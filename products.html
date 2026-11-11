@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Products & Pricing | North Star Bakery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <span>✨ Fresh Artisan Baking Daily | Pre-Orders & Inquiries Welcome</span>
+        </div>
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">
+                <img src="images/bakery-logo.png" alt="North Star Bakery Logo">
+                <div class="brand-text">
+                    <h1>NORTH STAR</h1>
+                    <p>Bakery & Confectionery</p>
+                </div>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products & Pricing</a></li>
+                    <li><a href="about.html">About & Philosophy</a></li>
+                    <li><a href="contact.html">Pre-Order & Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section style="text-align: center; margin-bottom: 40px;">
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--primary-color); margin-bottom: 10px;">Our Daily Selection</h2>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Baked fresh every morning using local grains and simple ingredients. No online payment required — reserve your favorite items for hassle-free in-store pickup.</p>
+        </section>
+
+        <div class="notice-box" style="text-align: center;">
+            📌 <strong>Pre-Order Policy:</strong> Prices listed below represent typical ranges. Place a request on our <a href="contact.html" style="color: var(--primary-color); font-weight: 700;">Pre-Order Page</a> to reserve items for morning pickup.
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="category-filter">
+            <button class="filter-btn active" data-filter="all">All Items</button>
+            <button class="filter-btn" data-filter="breads">Artisan Breads</button>
+            <button class="filter-btn" data-filter="pastries">Pastries & Sweets</button>
+            <button class="filter-btn" data-filter="cookies">Gourmet Cookies</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid">
+            <div class="product-card" data-category="breads">
+                <img src="images/bakery-signature-loaf.png" alt="Signature Country Loaf">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--primary-color);">Signature Country Sourdough</h3>
+                        <span class="product-price">$8.50</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Our hallmark loaf with a crisp, flour-dusted crust and moist, open crumb. Naturally leavened over 24 hours.</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="breads">
+                <img src="images/bakery-bread.png" alt="Seeded & Rustic Loaves">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--primary-color);">Rustic Seeded Harvest Loaf</h3>
+                        <span class="product-price">$9.00</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Packed with toasted pumpkin, flax, and sunflower seeds. Earthy flavor with a satisfying crunch.</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pastries">
+                <img src="images/bakery-feature-large.png" alt="Gourmet Pastry Assortment">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--primary-color);">Artisanal Butter Croissants</h3>
+                        <span class="product-price">$4.25 – $5.00</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Flaky, golden layers made with grass-fed regional butter. Available plain, chocolate, or almond filled.</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cookies">
+                <img src="images/bakery-feature-small.png" alt="Assorted Cookies">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--primary-color);">Stuffed Specialty Cookies</h3>
+                        <span class="product-price">$3.75 / ea</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Rich, soft-baked cookies topped with nuts, chocolate chunks, and sweet confection fillings.</p>
+                </div>
+            </div>
+        </div>
+
+        <section style="margin-top: 50px; text-align: center; background: var(--bg-card); padding: 30px; border-radius: 10px; box-shadow: var(--shadow);">
+            <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 10px;">Planning an Event or Need Large Quantities?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">We cater for family gatherings, office breakfasts, and community events. Contact us 48 hours in advance.</p>
+            <a href="contact.html" class="btn">Submit Catering Inquiry</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>North Star Bakery</h4>
+                <p>Authentic neighborhood bakehouse dedicated to traditional craftsmanship, natural ingredients, and warm hospitality.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products & Pricing</a></li>
+                    <li><a href="about.html">Our Philosophy</a></li>
+                    <li><a href="contact.html">Pre-Order Form</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Bakehouse Hours</h4>
+                <p>Monday – Saturday: 6:30 AM – 6:00 PM<br>Sunday: 7:00 AM – 3:00 PM<br><em>Fresh loaves ready by 7:00 AM daily.</em></p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 North Star Bakery. All rights reserved. Grounded in community & craftsmanship.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
