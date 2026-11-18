@@ -1,107 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Our Story & Philosophy | North Star Bakery</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | North Star Bakery</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="top-bar">
-            <span>✨ Fresh Artisan Baking Daily | Pre-Orders & Inquiries Welcome</span>
-        </div>
-        <div class="nav-container">
-            <a href="index.html" class="brand-logo">
-                <img src="images/bakery-logo.png" alt="North Star Bakery Logo">
-                <div class="brand-text">
-                    <h1>NORTH STAR</h1>
-                    <p>Bakery & Confectionery</p>
-                </div>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products & Pricing</a></li>
-                    <li><a href="about.html" class="active">About & Philosophy</a></li>
-                    <li><a href="contact.html">Pre-Order & Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="images/bakery-logo.png" alt="North Star Bakery Logo">
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products & Pricing</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="contact.html">Pre-Order & Contact</a></li>
+        </ul>
+      </nav>
+      <div class="favorites-badge-container">
+        <a href="products.html#favorites-section" class="favorites-badge" id="favorites-badge" title="View Saved Favorites">
+          ⭐ Favorites (<span id="fav-count">0</span>)
+        </a>
+      </div>
+    </div>
+  </header>
 
-    <main class="container">
-        <section style="text-align: center; margin-bottom: 40px;">
-            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--primary-color); margin-bottom: 10px;">The North Star Story</h2>
-            <p style="color: var(--text-muted); font-size: 1.1rem;">Where time-honored baking meets community connection.</p>
-        </section>
+  <section class="page-banner">
+    <div class="container">
+      <h1>Our Baking Story & Philosophy</h1>
+      <p>Simple ingredients, local stone-milled grains, and patient fermentation.</p>
+    </div>
+  </section>
 
-        <!-- Sourcing & Philosophy Grid -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 50px;">
-            <div>
-                <h3 style="font-family: var(--font-heading); color: var(--primary-color); font-size: 1.8rem; margin-bottom: 15px;">Our Sourcing Philosophy</h3>
-                <p style="margin-bottom: 15px; color: var(--text-dark);">At North Star Bakery, we believe that authentic baking requires time, patience, and uncompromising ingredient quality. Every loaf begins before sunrise with simple, unrefined ingredients and locally milled grains.</p>
-                <p style="color: var(--text-muted);">By partnering with regional grain farmers, we ensure our flours retain their natural oils, minerals, and flavor profiles. We refuse to use artificial improvers or speed up fermentation — because good bread simply cannot be rushed.</p>
-            </div>
-            <div>
-                <img src="images/bakery-bread.png" alt="Artisan Bread Display" style="width: 100%; border-radius: 10px; box-shadow: var(--shadow);">
-            </div>
+  <section class="about-content section">
+    <div class="container grid grid-2">
+      <div>
+        <h2>The Art of Unhurried Baking</h2>
+        <p>North Star Bakery was founded on a simple conviction: real sourdough cannot be rushed. In a world of commercial additives and fast yeast, we honor time-tested baking traditions.</p>
+        <p>Every loaf begins before sunrise with wild yeast starter cultures, regional stone-ground flour, pure filtered water, and sea salt. Our doughs cold-ferment for up to 36 hours, unlocking deep complex flavors and breaking down gluten for easier digestion.</p>
+        
+        <h3>Local Sourcing Philosophy</h3>
+        <p>We source 100% of our flour from independent regional mills that work directly with sustainable wheat farmers. By supporting organic crop rotation, we ensure our bread tastes exceptional while caring for local soil health.</p>
+      </div>
+
+      <!-- Signature Loaf Figure -->
+      <div class="signature-loaf-box">
+        <figure class="signature-loaf-card">
+          <img src="images/bakery-signature-loaf.png" alt="North Star Bakery Signature Sourdough Loaf">
+          <figcaption>
+            <strong>Our Signature Country Loaf:</strong> Hand-shaped, cold-fermented for 36 hours, and hearth-baked on hot stone decks for a blistering dark crust and moist open crumb.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="behind-the-scenes section bg-alt">
+    <div class="container">
+      <h2 class="section-title">Watch Our Daily Baking Process</h2>
+      <div class="video-container">
+        <video id="bakery-video-about" poster="images/bakery-storefront.png" preload="metadata">
+          <source src="videos/bakery-behind-scenes.mp4" type="video/mp4">
+          <track kind="subtitles" src="videos/subtitles-en.vtt" srclang="en" label="English" default>
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-controls">
+          <button id="btn-play-pause-about" class="btn btn-sm">▶ Play</button>
+          <button id="btn-mute-about" class="btn btn-sm">🔊 Mute</button>
+          <button id="btn-cc-about" class="btn btn-sm">💬 CC Subtitles (On)</button>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Figure with Caption (Required Element) -->
-        <div class="figure-container">
-            <figure>
-                <img src="images/bakery-signature-loaf.png" alt="Signature Loaf Cradled in Linen">
-                <figcaption>Our Signature Sourdough Loaf — hand-shaped, naturally fermented over 24 hours, and dusted with flour before stone-hearth baking.</figcaption>
-            </figure>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>North Star Bakery</h3>
+        <p>124 Hearthstone Way, Milltown</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit Us</h4>
+        <p>Tue–Sun: 6:30 AM – 3:00 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
+    </div>
+  </footer>
 
-        <!-- Staff & Craftsmanship Highlights -->
-        <section style="margin: 50px 0;">
-            <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--primary-color); text-align: center; margin-bottom: 30px;">Our Craftsmanship Principles</h3>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>🌅 Sunrise Dedication</h3>
-                    <p>Our team arrives long before dawn to mix doughs, shape crusty rounds, and fire up our hearth stone ovens.</p>
-                </div>
-                <div class="card">
-                    <h3>🌾 Stone-Milled Grains</h3>
-                    <p>We work exclusively with regional grain growers who prioritize soil health and organic milling processes.</p>
-                </div>
-                <div class="card">
-                    <h3>💛 Community First</h3>
-                    <p>Our bakehouse is designed as a warm gathering place for neighbors, commuters, and food lovers alike.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>North Star Bakery</h4>
-                <p>Authentic neighborhood bakehouse dedicated to traditional craftsmanship, natural ingredients, and warm hospitality.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products & Pricing</a></li>
-                    <li><a href="about.html">Our Philosophy</a></li>
-                    <li><a href="contact.html">Pre-Order Form</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Bakehouse Hours</h4>
-                <p>Monday – Saturday: 6:30 AM – 6:00 PM<br>Sunday: 7:00 AM – 3:00 PM<br><em>Fresh loaves ready by 7:00 AM daily.</em></p>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 North Star Bakery. All rights reserved. Grounded in community & craftsmanship.
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

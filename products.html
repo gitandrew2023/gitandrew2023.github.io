@@ -1,133 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Products & Pricing | North Star Bakery</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products & Pricing | North Star Bakery</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="top-bar">
-            <span>✨ Fresh Artisan Baking Daily | Pre-Orders & Inquiries Welcome</span>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="images/bakery-logo.png" alt="North Star Bakery Logo">
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active">Products & Pricing</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Pre-Order & Contact</a></li>
+        </ul>
+      </nav>
+      <div class="favorites-badge-container">
+        <a href="#favorites-section" class="favorites-badge" id="favorites-badge" title="View Saved Favorites">
+          ⭐ Favorites (<span id="fav-count">0</span>)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Daily Products & Pricing</h1>
+      <p>Hand-shaped daily in limited batches. Pre-order online for guaranteed pickup.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Category Filter & Favorites -->
+  <section class="products-section section">
+    <div class="container">
+      
+      <!-- Dynamic Filter Buttons -->
+      <div class="filter-controls">
+        <button class="filter-btn active" data-category="all">All Items</button>
+        <button class="filter-btn" data-category="breads">Sourdough Breads</button>
+        <button class="filter-btn" data-category="pastries">Morning Pastries</button>
+        <button class="filter-btn" data-category="cookies">Cookies & Sweets</button>
+      </div>
+
+      <!-- Favorites Wishlist Drawer / Summary Box -->
+      <div id="favorites-section" class="favorites-drawer card">
+        <div class="favorites-header">
+          <h3>⭐ Your Saved Favorites (<span id="fav-summary-count">0</span>)</h3>
+          <button id="clear-favs-btn" class="btn btn-sm btn-outline">Clear All</button>
         </div>
-        <div class="nav-container">
-            <a href="index.html" class="brand-logo">
-                <img src="images/bakery-logo.png" alt="North Star Bakery Logo">
-                <div class="brand-text">
-                    <h1>NORTH STAR</h1>
-                    <p>Bakery & Confectionery</p>
-                </div>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html" class="active">Products & Pricing</a></li>
-                    <li><a href="about.html">About & Philosophy</a></li>
-                    <li><a href="contact.html">Pre-Order & Contact</a></li>
-                </ul>
-            </nav>
+        <div id="favorites-list" class="favorites-list-empty">
+          <p>No favorites saved yet. Click the "⭐ Add to Favorites" button on any product below to save items for quick pre-ordering!</p>
         </div>
-    </header>
-
-    <main class="container">
-        <section style="text-align: center; margin-bottom: 40px;">
-            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--primary-color); margin-bottom: 10px;">Our Daily Selection</h2>
-            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Baked fresh every morning using local grains and simple ingredients. No online payment required — reserve your favorite items for hassle-free in-store pickup.</p>
-        </section>
-
-        <div class="notice-box" style="text-align: center;">
-            📌 <strong>Pre-Order Policy:</strong> Prices listed below represent typical ranges. Place a request on our <a href="contact.html" style="color: var(--primary-color); font-weight: 700;">Pre-Order Page</a> to reserve items for morning pickup.
+        <div id="favorites-actions" class="favorites-actions hidden">
+          <a href="contact.html" id="preorder-favs-btn" class="btn btn-primary">Proceed to Pre-Order Saved Items →</a>
         </div>
+      </div>
 
-        <!-- Filter Buttons -->
-        <div class="category-filter">
-            <button class="filter-btn active" data-filter="all">All Items</button>
-            <button class="filter-btn" data-filter="breads">Artisan Breads</button>
-            <button class="filter-btn" data-filter="pastries">Pastries & Sweets</button>
-            <button class="filter-btn" data-filter="cookies">Gourmet Cookies</button>
-        </div>
-
-        <!-- Product Grid -->
-        <div class="product-grid">
-            <div class="product-card" data-category="breads">
-                <img src="images/bakery-signature-loaf.png" alt="Signature Country Loaf">
-                <div class="product-info">
-                    <div class="product-header">
-                        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--primary-color);">Signature Country Sourdough</h3>
-                        <span class="product-price">$8.50</span>
-                    </div>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Our hallmark loaf with a crisp, flour-dusted crust and moist, open crumb. Naturally leavened over 24 hours.</p>
-                </div>
+      <!-- Product Cards Grid -->
+      <div class="grid grid-3" id="products-grid">
+        
+        <!-- Bread Card 1 -->
+        <div class="card product-card" data-category="breads">
+          <img src="images/bakery-signature-loaf.png" alt="Signature Country Sourdough" class="product-img">
+          <div class="product-body">
+            <span class="category-tag">Sourdough Bread</span>
+            <h3>Signature Country Sourdough</h3>
+            <p>Our classic round loaf made with organic stone-ground wheat, 36-hour cold fermentation, and a blistering stone hearth crust.</p>
+            <div class="product-meta">
+              <span class="price">$9.00 – $11.00 / loaf</span>
             </div>
-
-            <div class="product-card" data-category="breads">
-                <img src="images/bakery-bread.png" alt="Seeded & Rustic Loaves">
-                <div class="product-info">
-                    <div class="product-header">
-                        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--primary-color);">Rustic Seeded Harvest Loaf</h3>
-                        <span class="product-price">$9.00</span>
-                    </div>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Packed with toasted pumpkin, flax, and sunflower seeds. Earthy flavor with a satisfying crunch.</p>
-                </div>
+            <div class="product-actions">
+              <button class="btn btn-sm btn-outline add-fav-btn" data-id="bread-signature" data-name="Signature Country Sourdough" data-price="$9.00 - $11.00">
+                ⭐ Add to Favorites
+              </button>
             </div>
-
-            <div class="product-card" data-category="pastries">
-                <img src="images/bakery-feature-large.png" alt="Gourmet Pastry Assortment">
-                <div class="product-info">
-                    <div class="product-header">
-                        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--primary-color);">Artisanal Butter Croissants</h3>
-                        <span class="product-price">$4.25 – $5.00</span>
-                    </div>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Flaky, golden layers made with grass-fed regional butter. Available plain, chocolate, or almond filled.</p>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="cookies">
-                <img src="images/bakery-feature-small.png" alt="Assorted Cookies">
-                <div class="product-info">
-                    <div class="product-header">
-                        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--primary-color);">Stuffed Specialty Cookies</h3>
-                        <span class="product-price">$3.75 / ea</span>
-                    </div>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Rich, soft-baked cookies topped with nuts, chocolate chunks, and sweet confection fillings.</p>
-                </div>
-            </div>
+          </div>
         </div>
 
-        <section style="margin-top: 50px; text-align: center; background: var(--bg-card); padding: 30px; border-radius: 10px; box-shadow: var(--shadow);">
-            <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 10px;">Planning an Event or Need Large Quantities?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">We cater for family gatherings, office breakfasts, and community events. Contact us 48 hours in advance.</p>
-            <a href="contact.html" class="btn">Submit Catering Inquiry</a>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>North Star Bakery</h4>
-                <p>Authentic neighborhood bakehouse dedicated to traditional craftsmanship, natural ingredients, and warm hospitality.</p>
+        <!-- Bread Card 2 -->
+        <div class="card product-card" data-category="breads">
+          <img src="images/bakery-bread.png" alt="Multigrain & Seed Loaf" class="product-img">
+          <div class="product-body">
+            <span class="category-tag">Sourdough Bread</span>
+            <h3>Seeded Harvest Sourdough</h3>
+            <p>Packed with toasted pumpkin seeds, sunflower seeds, flaxseed, and sesame for a nutty texture and rich aroma.</p>
+            <div class="product-meta">
+              <span class="price">$10.00 – $12.00 / loaf</span>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products & Pricing</a></li>
-                    <li><a href="about.html">Our Philosophy</a></li>
-                    <li><a href="contact.html">Pre-Order Form</a></li>
-                </ul>
+            <div class="product-actions">
+              <button class="btn btn-sm btn-outline add-fav-btn" data-id="bread-seeded" data-name="Seeded Harvest Sourdough" data-price="$10.00 - $12.00">
+                ⭐ Add to Favorites
+              </button>
             </div>
-            <div class="footer-col">
-                <h4>Bakehouse Hours</h4>
-                <p>Monday – Saturday: 6:30 AM – 6:00 PM<br>Sunday: 7:00 AM – 3:00 PM<br><em>Fresh loaves ready by 7:00 AM daily.</em></p>
-            </div>
+          </div>
         </div>
-        <div class="copyright">
-            &copy; 2026 North Star Bakery. All rights reserved. Grounded in community & craftsmanship.
-        </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <!-- Pastry Card 1 -->
+        <div class="card product-card" data-category="pastries">
+          <img src="images/bakery-feature-small.png" alt="Butter Croissants" class="product-img">
+          <div class="product-body">
+            <span class="category-tag">Morning Pastry</span>
+            <h3>Artisanal Butter Croissant</h3>
+            <p>Laminated with European high-fat cultured butter for hundreds of delicate, flaky layers.</p>
+            <div class="product-meta">
+              <span class="price">$4.50 – $16.00 (Single / 4-Pack)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-sm btn-outline add-fav-btn" data-id="pastry-croissant" data-name="Artisanal Butter Croissant" data-price="$4.50 - $16.00">
+                ⭐ Add to Favorites
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pastry Card 2 -->
+        <div class="card product-card" data-category="pastries">
+          <img src="images/bakery-feature-large.png" alt="Valrhona Pain au Chocolat" class="product-img">
+          <div class="product-body">
+            <span class="category-tag">Morning Pastry</span>
+            <h3>Valrhona Dark Chocolate Brioche</h3>
+            <p>Rich brioche dough filled with double batons of 64% Valrhona dark chocolate.</p>
+            <div class="product-meta">
+              <span class="price">$5.25 – $19.00 (Single / 4-Pack)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-sm btn-outline add-fav-btn" data-id="pastry-choc-brioche" data-name="Valrhona Dark Chocolate Brioche" data-price="$5.25 - $19.00">
+                ⭐ Add to Favorites
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cookie Card 1 -->
+        <div class="card product-card" data-category="cookies">
+          <img src="images/bakery-feature-small.png" alt="Sea Salt Dark Chocolate Cookies" class="product-img">
+          <div class="product-body">
+            <span class="category-tag">Cookies & Sweets</span>
+            <h3>Maldon Sea Salt Chocolate Chunk Cookie</h3>
+            <p>Thick, gooey-centered cookie loaded with bittersweet chocolate chunks and sprinkled with flakey Maldon sea salt.</p>
+            <div class="product-meta">
+              <span class="price">$3.75 – $20.00 (Single / Half Dozen)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-sm btn-outline add-fav-btn" data-id="cookie-seasalt" data-name="Maldon Sea Salt Chocolate Chunk Cookie" data-price="$3.75 - $20.00">
+                ⭐ Add to Favorites
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cookie Card 2 -->
+        <div class="card product-card" data-category="cookies">
+          <img src="images/bakery-feature-large.png" alt="Almond Cinnamon Shortbread" class="product-img">
+          <div class="product-body">
+            <span class="category-tag">Cookies & Sweets</span>
+            <h3>Toasted Almond Cinnamon Shortbread</h3>
+            <p>Melt-in-your-mouth shortbread crafted with brown butter, roasted almonds, and Korintje cinnamon.</p>
+            <div class="product-meta">
+              <span class="price">$3.50 – $18.00 (Single / Box)</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-sm btn-outline add-fav-btn" data-id="cookie-shortbread" data-name="Toasted Almond Cinnamon Shortbread" data-price="$3.50 - $18.00">
+                ⭐ Add to Favorites
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>North Star Bakery</h3>
+        <p>124 Hearthstone Way, Milltown</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Pre-Order Form</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Note</h4>
+        <p>Pricing ranges reflect individual items vs bulk orders. No instant online checkout required.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
