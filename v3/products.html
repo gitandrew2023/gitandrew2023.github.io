@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="North Star Bakery Product Catalog - Sourdough bread, morning pastries, and artisanal cookies with transparent pricing.">
+  <title>Products & Pricing | North Star Bakery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand">
+        <a href="index.html">
+          <img src="images/bakery-logo.png" alt="North Star Bakery Logo" class="brand-logo">
+        </a>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰ Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active">Products & Pricing</a></li>
+          <li><a href="about.html">About & Philosophy</a></li>
+          <li><a href="contact.html">Pre-Order & Contact</a></li>
+          <li class="nav-fav"><a href="#favorites-section" id="nav-fav-count">⭐ Favorites (0)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-header">
+      <h1>Daily Products & Pricing</h1>
+      <p>Explore our daily baked inventory. No online payment checkout required — submit a pre-order for next-day store pickup!</p>
+    </section>
+
+    <!-- Product Category Filter -->
+    <section class="filter-section">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="breads">Artisan Breads</button>
+        <button class="filter-btn" data-filter="pastries">Morning Pastries</button>
+        <button class="filter-btn" data-filter="cookies">Specialty Cookies</button>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="products-grid-section">
+      <div class="products-grid">
+        <!-- Item 1 -->
+        <article class="product-card" data-category="breads">
+          <img src="images/bakery-bread.png" alt="Country Sourdough Loaf" class="product-img">
+          <div class="product-info">
+            <span class="cat-tag">Breads</span>
+            <h3>Country Sourdough Loaf</h3>
+            <p>Naturally leavened with local wheat flour, featuring a crispy caramelized crust and airy open crumb.</p>
+            <p class="product-price">$8.50 – $10.00 / loaf</p>
+            <button class="btn btn-fav" onclick="toggleFavorite('p-01', 'Country Sourdough Loaf', '$8.50 - $10.00')">⭐ Add to Favorites</button>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="product-card" data-category="breads">
+          <img src="images/bakery-signature-loaf.png" alt="Signature Stone Hearth Loaf" class="product-img">
+          <div class="product-info">
+            <span class="cat-tag">Breads</span>
+            <h3>Signature Stone Hearth Loaf</h3>
+            <p>36-hour cold fermented round loaf baked on granite hearth stone. Rich, slightly tangy flavor profile.</p>
+            <p class="product-price">$9.50 – $11.50 / loaf</p>
+            <button class="btn btn-fav" onclick="toggleFavorite('p-02', 'Signature Stone Hearth Loaf', '$9.50 - $11.50')">⭐ Add to Favorites</button>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="product-card" data-category="pastries">
+          <img src="images/bakery-feature-large.png" alt="Butter Croissants & Morning Buns" class="product-img">
+          <div class="product-info">
+            <span class="cat-tag">Pastries</span>
+            <h3>Butter Croissants & Pain au Chocolat</h3>
+            <p>French-style laminated dough made with high-fat European butter, baked fresh every 4 hours.</p>
+            <p class="product-price">$4.50 – $5.50 / piece</p>
+            <button class="btn btn-fav" onclick="toggleFavorite('p-03', 'Butter Croissants & Pain au Chocolat', '$4.50 - $5.50')">⭐ Add to Favorites</button>
+          </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="product-card" data-category="cookies">
+          <img src="images/bakery-feature-small.png" alt="Artisanal Shortbread & Cookies" class="product-img">
+          <div class="product-info">
+            <span class="cat-tag">Cookies</span>
+            <h3>Sea Salt Chocolate Shortbread</h3>
+            <p>Rich dark chocolate chunks, browned butter dough, and a light dusting of Maldon sea salt flakes.</p>
+            <p class="product-price">$3.50 / cookie | $18.00 / dozen</p>
+            <button class="btn btn-fav" onclick="toggleFavorite('p-04', 'Sea Salt Chocolate Shortbread', '$3.50 ea / $18.00 doz')">⭐ Add to Favorites</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Dynamic Favorites Drawer -->
+    <section class="favorites-section" id="favorites-section">
+      <h2>⭐ Your Saved Favorites (Wishlist)</h2>
+      <p>Items saved here persist across browser visits. You can automatically populate them into your pre-order request form!</p>
+      <div id="favorites-list" class="favorites-container">
+        <!-- JS injects favorited items here -->
+      </div>
+      <div class="favorites-actions">
+        <a href="contact.html?prefill=true" class="btn btn-primary">Pre-Order Favorites Now</a>
+        <button class="btn btn-secondary" onclick="clearAllFavorites()">Clear Favorites</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 North Star Bakery. Touchstone 5 Final Project.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

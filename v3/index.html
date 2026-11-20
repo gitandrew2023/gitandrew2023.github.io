@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="North Star Bakery - Handcrafted artisanal sourdough bread, morning pastries, and specialty cookies baked fresh daily.">
+  <title>North Star Bakery | Artisanal Sourdough & Fresh Pastries</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand">
+        <a href="index.html" aria-label="North Star Bakery Homepage">
+          <img src="images/bakery-logo.png" alt="North Star Bakery Logo" class="brand-logo">
+        </a>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        ☰ Menu
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="products.html">Products & Pricing</a></li>
+          <li><a href="about.html">About & Philosophy</a></li>
+          <li><a href="contact.html">Pre-Order & Contact</a></li>
+          <li class="nav-fav"><a href="products.html#favorites-section" id="nav-fav-count">⭐ Favorites (0)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Handcrafted Sourdough & Artisanal Baking</h1>
+        <p class="hero-tagline">Baked with regional grains, natural wild yeast, and 36 hours of patient cold fermentation.</p>
+        
+        <!-- Audio Welcome Message -->
+        <div class="audio-card">
+          <h2>🎙️ Listen to Our Morning Welcome</h2>
+          <audio controls preload="metadata">
+            <source src="audio/bakery-welcome.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <div class="transcript-box">
+            <p><strong>Audio Transcript:</strong> <em>"Here at North Star Bakery, every loaf starts before sunrise. We use simple ingredients, local grains, and time because good bread can't be rushed. Stop by and taste the difference, or place a pre-order, and we'll have something fresh waiting for you."</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Known For Section -->
+    <section class="known-for-section">
+      <h2>What We're Known For</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌾</div>
+          <h3>Regional Grains</h3>
+          <p>Milled locally to retain natural nutrients, aromatic flavor, and rustic texture.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⏳</div>
+          <h3>36-Hour Fermentation</h3>
+          <p>Slow cold fermentation develops deep flavor and creates an easily digestible loaf.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔥</div>
+          <h3>Stone Hearth Baking</h3>
+          <p>Baked directly on intense stone heat for a blistering crackling crust and tender crumb.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Item of the Week with Responsive Picture Element -->
+    <section class="featured-item-section">
+      <h2>Weekly Featured Showcase</h2>
+      <div class="featured-container">
+        <picture>
+          <source media="(min-width: 768px)" srcset="images/bakery-feature-large.png">
+          <img src="images/bakery-feature-small.png" alt="Freshly baked morning pastries and gourmet cookies assortment" class="featured-img">
+        </picture>
+        <div class="featured-text">
+          <span class="badge">Specialty Selection</span>
+          <h3>Artisanal Morning Pastry & Cookie Assortment</h3>
+          <p>Our weekly showcase features buttery laminated croissants, fruit galettes, and toasted nut sablés. Baked in limited batches every morning.</p>
+          <p class="price-range">Price Range: $4.50 – $18.00</p>
+          <div class="button-group">
+            <button class="btn btn-fav" onclick="toggleFavorite('feat-01', 'Artisanal Pastry Showcase', '$4.50 - $18.00')">⭐ Add to Favorites</button>
+            <a href="contact.html" class="btn btn-primary">Pre-Order Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Behind the Scenes Video -->
+    <section class="video-section">
+      <h2>Behind the Scenes at North Star Bakery</h2>
+      <div class="video-container">
+        <video id="bakery-video" poster="images/bakery-storefront.png" preload="metadata">
+          <source src="videos/bakery-behind-scenes.mp4" type="video/mp4">
+          <track kind="subtitles" src="videos/subtitles-en.vtt" srclang="en" label="English" default>
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-controls">
+          <button id="btn-play-pause" class="ctrl-btn">▶ Play</button>
+          <button id="btn-mute" class="ctrl-btn">🔊 Mute</button>
+          <button id="btn-cc" class="ctrl-btn">💬 CC Subtitles (On)</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>North Star Bakery</h4>
+        <p>124 Hearthstone Lane, Flourtown</p>
+        <p>Phone: (555) 839-2253</p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours of Operation</h4>
+        <p>Tuesday – Friday: 6:30 AM – 3:00 PM</p>
+        <p>Saturday – Sunday: 7:00 AM – 2:00 PM</p>
+        <p>Monday: Closed (Baking Prep)</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="products.html">Product Catalog</a></li>
+          <li><a href="about.html">Our Philosophy</a></li>
+          <li><a href="contact.html">Pre-Order Form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 North Star Bakery. All rights reserved. Touchstone 5 Final Project.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
