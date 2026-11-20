@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Star Bakery | Artisanal Sourdough & Fresh Pastries</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="images/bakery-logo.png" alt="North Star Bakery Logo">
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="products.html">Products & Pricing</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Pre-Order & Contact</a></li>
+        </ul>
+      </nav>
+      <div class="favorites-badge-container">
+        <a href="products.html#favorites-section" class="favorites-badge" id="favorites-badge" title="View Saved Favorites">
+          ⭐ Favorites (<span id="fav-count">0</span>)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Handcrafted Sourdough & Daily Pastries</h1>
+      <p class="hero-tagline">Baked with regional grains, natural fermentation, and unhurried patience since 2014.</p>
+      
+      <!-- Audio Welcome Player -->
+      <div class="audio-card">
+        <h3>🎙️ Listen to Our Morning Welcome</h3>
+        <audio controls preload="metadata">
+          <source src="audio/bakery-welcome.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="audio-transcript">
+          <strong>Audio Transcript:</strong> "Here at Northstar Bakery, every loaf starts before sunrise. We use simple ingredients, local grains, and time because good bread can't be rushed. Stop by and taste the difference, or place a pre-order, and we'll have something fresh waiting for you."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="highlights section">
+    <div class="container">
+      <h2 class="section-title">What We're Known For</h2>
+      <div class="grid grid-3">
+        <div class="card highlight-card">
+          <div class="card-icon">🌾</div>
+          <h3>100% Regional Grains</h3>
+          <p>Milled fresh locally from sustainable farms committed to non-GMO soil health.</p>
+        </div>
+        <div class="card highlight-card">
+          <div class="card-icon">⏳</div>
+          <h3>36-Hour Fermentation</h3>
+          <p>Wild sourdough cultures break down gluten naturally for rich flavor and easy digestion.</p>
+        </div>
+        <div class="card highlight-card">
+          <div class="card-icon">🔥</div>
+          <h3>Stone Hearth Baked</h3>
+          <p>Baked daily on stone decks to lock in steam, creating a crisp crust and open crumb.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Item of the Week -->
+  <section class="featured-item section bg-alt">
+    <div class="container">
+      <h2 class="section-title">Featured Selection of the Week</h2>
+      <div class="featured-showcase">
+        <picture class="featured-picture">
+          <source media="(min-width: 768px)" srcset="images/bakery-feature-large.png">
+          <img src="images/bakery-feature-small.png" alt="Featured Weekly Pastry and Cookie Selection" class="responsive-feature-img">
+        </picture>
+        <div class="featured-info">
+          <span class="badge">Baker's Choice</span>
+          <h3>Artisanal Pastry & Cookie Sampler Box</h3>
+          <p>An abundant assortment of freshly baked butter croissants, chocolate pain au chocolat, almond bear claws, and sea salt dark chocolate chunk cookies.</p>
+          <p class="price-range"><strong>Price Range:</strong> $18.00 – $32.00 (Half & Full Box)</p>
+          <button class="btn btn-primary add-fav-btn" data-id="feat-sampler" data-name="Artisanal Pastry & Cookie Sampler Box" data-price="$18.00 - $32.00">
+            ⭐ Add to Favorites
+          </button>
+          <a href="contact.html?item=SamplerBox" class="btn btn-secondary">Pre-Order Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Behind the Scenes Video -->
+  <section class="behind-the-scenes section">
+    <div class="container">
+      <h2 class="section-title">Behind the Scenes at North Star</h2>
+      <div class="video-container">
+        <video id="bakery-video" poster="images/bakery-storefront.png" preload="metadata">
+          <source src="videos/bakery-behind-scenes.mp4" type="video/mp4">
+          <track kind="subtitles" src="videos/subtitles-en.vtt" srclang="en" label="English" default>
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-controls">
+          <button id="btn-play-pause" class="btn btn-sm">▶ Play</button>
+          <button id="btn-mute" class="btn btn-sm">🔊 Mute</button>
+          <button id="btn-cc" class="btn btn-sm">💬 CC Subtitles (On)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>North Star Bakery</h3>
+        <p>124 Hearthstone Way, Milltown</p>
+        <p>Tue–Sun: 6:30 AM – 3:00 PM (Mon Closed)</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="products.html">Daily Products</a></li>
+          <li><a href="about.html">Our Philosophy</a></li>
+          <li><a href="contact.html">Pre-Order Requests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <p>Pre-orders strongly recommended for weekend pickup.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

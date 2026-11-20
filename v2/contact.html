@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Order & Contact | North Star Bakery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="images/bakery-logo.png" alt="North Star Bakery Logo">
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products & Pricing</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html" class="active">Pre-Order & Contact</a></li>
+        </ul>
+      </nav>
+      <div class="favorites-badge-container">
+        <a href="products.html#favorites-section" class="favorites-badge" id="favorites-badge" title="View Saved Favorites">
+          ⭐ Favorites (<span id="fav-count">0</span>)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Pre-Order & Contact Us</h1>
+      <p>Reserve fresh sourdough and pastries for pickup, or send us a general inquiry.</p>
+    </div>
+  </section>
+
+  <section class="contact-section section">
+    <div class="container grid grid-2">
+      
+      <!-- Pre-Order & Inquiry Form with JS Validation & LocalStorage -->
+      <div class="card form-card">
+        <h2>Submit Pre-Order or Inquiry</h2>
+        <p class="form-desc">Please complete the form below. Pre-orders require at least 24 hours advance notice.</p>
+        
+        <!-- Favorites auto-fill notice -->
+        <div id="fav-autofill-notice" class="alert alert-info hidden">
+          💡 <strong>Favorites Detected:</strong> Your saved favorite products have been automatically pre-filled into the Item Details field below!
+        </div>
+
+        <form id="preorder-form" novalidate>
+          
+          <!-- Name Field -->
+          <div class="form-group">
+            <label for="user_name">Full Name <span class="required">*</span></label>
+            <input type="text" id="user_name" name="user_name" class="form-control" placeholder="e.g., Jane Doe">
+            <span class="error-msg" id="err-user_name"></span>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="user_email">Email Address <span class="required">*</span></label>
+            <input type="email" id="user_email" name="user_email" class="form-control" placeholder="e.g., jane@example.com">
+            <span class="error-msg" id="err-user_email"></span>
+          </div>
+
+          <!-- Pickup Date Field -->
+          <div class="form-group">
+            <label for="pickup_date">Desired Pickup Date <span class="required">*</span></label>
+            <input type="date" id="pickup_date" name="pickup_date" class="form-control">
+            <span class="error-msg" id="err-pickup_date"></span>
+          </div>
+
+          <!-- Request Type Select -->
+          <div class="form-group">
+            <label for="request_type">Request Type <span class="required">*</span></label>
+            <select id="request_type" name="request_type" class="form-control">
+              <option value="">-- Select Request Type --</option>
+              <option value="preorder">Loaf & Pastry Pre-Order</option>
+              <option value="catering">Event / Catering Inquiry</option>
+              <option value="general">General Question</option>
+            </select>
+            <span class="error-msg" id="err-request_type"></span>
+          </div>
+
+          <!-- Item Details Textarea -->
+          <div class="form-group">
+            <label for="item_details">Item Details & Quantities <span class="required">*</span></label>
+            <textarea id="item_details" name="item_details" rows="4" class="form-control" placeholder="Please specify items, quantities, and preferred pickup time (e.g., 2x Country Sourdough, 4x Butter Croissants at 9:00 AM)"></textarea>
+            <span class="error-msg" id="err-item_details"></span>
+          </div>
+
+          <!-- Allergy Notes -->
+          <div class="form-group">
+            <label for="allergy_notes">Dietary or Allergy Notes (Optional)</label>
+            <textarea id="allergy_notes" name="allergy_notes" rows="2" class="form-control" placeholder="e.g., Tree nut allergy, seeds preferred"></textarea>
+          </div>
+
+          <!-- Remember Me Checkbox -->
+          <div class="form-group form-checkbox">
+            <label>
+              <input type="checkbox" id="remember_me" checked> Remember my contact info for future orders (Browser Storage)
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Submit Pre-Order Request</button>
+        </form>
+
+        <!-- Form Submission Modal/Message -->
+        <div id="form-success-message" class="alert alert-success hidden">
+          🎉 <strong>Pre-Order Submitted Successfully!</strong><br>
+          Thank you, <span id="confirm-name"></span>! We have received your request for <span id="confirm-date"></span>. A confirmation summary has been sent to <em><span id="confirm-email"></span></em>.
+        </div>
+      </div>
+
+      <!-- Store Info & Map -->
+      <div class="store-info-box">
+        <div class="card info-card">
+          <h3>Bakery Location & Hours</h3>
+          <p>📍 <strong>Address:</strong> 124 Hearthstone Way, Milltown</p>
+          <p>📞 <strong>Phone:</strong> (555) 839-2253</p>
+          <p>✉️ <strong>Email:</strong> hello@northstarbakery.com</p>
+          
+          <hr>
+          
+          <h4>Store Hours</h4>
+          <ul class="hours-list">
+            <li><span>Tuesday – Friday:</span> <strong>6:30 AM – 3:00 PM</strong></li>
+            <li><span>Saturday & Sunday:</span> <strong>7:00 AM – 2:00 PM</strong></li>
+            <li><span>Monday:</span> <strong>Closed for Fermentation</strong></li>
+          </ul>
+
+          <div class="storefront-preview">
+            <img src="images/bakery-storefront.png" alt="North Star Bakery Storefront Display Window">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>North Star Bakery</h3>
+        <p>124 Hearthstone Way, Milltown</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pre-Orders</h4>
+        <p>Pre-orders are processed within 4 business hours.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
